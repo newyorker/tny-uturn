@@ -1,0 +1,12 @@
+{
+  "name": "tny-speeding-ticket",
+  "version": "1.0.0",
+  "homepage": "https://github.com/NewYorker/tny-speeding-ticket",
+  "authors": [
+    "Leonard Bogdonoff <rememberlenny@gmail.com>"
+  ],
+  "description": "a small library for detecting people who scroll quickly",
+  "main": "dist/speedingticket.js",
+  "license": "MIT",
+  "ignore": []
+}
