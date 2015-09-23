@@ -1,12 +1,12 @@
 {
-  "name": "tny-speeding-ticket",
+  "name": "tny-uturn",
   "version": "1.0.0",
-  "homepage": "https://github.com/NewYorker/tny-speeding-ticket",
+  "homepage": "https://github.com/NewYorker/tny-uturn",
   "authors": [
     "Leonard Bogdonoff <rememberlenny@gmail.com>"
   ],
-  "description": "a small library for detecting people who scroll quickly",
-  "main": "dist/speedingticket.js",
+  "description": "a small library for adding events to scroll direction changes",
+  "main": "uturn.js",
   "license": "MIT",
   "ignore": []
 }

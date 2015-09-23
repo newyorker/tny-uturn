@@ -1,10 +1,9 @@
 {
-  "name": "tny-speeding-ticket",
+  "name": "tny-uturn",
   "version": "1.0.0",
-  "description": "a small library for detecting people who scroll quickly",
-  "main": "speedingTicket.js",
+  "description": "a small library for detecting changes in scroll direction",
+  "main": "uturn.js",
   "directories": {
-    "example": "example"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
