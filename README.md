@@ -1,6 +1,6 @@
-# SpeedingTicket - detect scrolling speeders, with events
+# SpeedingTicket - detect scrolling behavior with a requestAnimationFrame debounce
 
-SpeedingTicket.js is a small library for detecting people who scroll quickly. It uses the window object's timeout events to keep track of the user's past scroll speed, without bogging down the browser.
+SpeedingTicket.js is a small library for detecting people who change scroll direction while viewing a webpage. It uses the requestAnimationFrame events to run at 60 frames a second.
 
 ## Getting started
 
