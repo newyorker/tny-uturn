@@ -1,4 +1,4 @@
-function speedradar () {
+function uturn () {
 
     var _scrollY,
         _countingUp             = 0,
@@ -130,6 +130,4 @@ function speedradar () {
       checkIsReadingNormally(y);
       _scrollY = y;
     };
-
-    return thespeedradar;
   }
