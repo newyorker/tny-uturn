@@ -1,4 +1,4 @@
-![](https://evaloy.files.wordpress.com/2011/06/u-turncrop.jpg)
+![](https://media.giphy.com/media/xTiTnq4cEnufuQAAlW/giphy.gif)
 
 # uturn - detect scrolling behavior with a requestAnimationFrame debounce
 
@@ -8,13 +8,13 @@ uturn.js is a small library for detecting people who change scroll direction whi
 
 Run the function on your site. We run this in the article pages, because those are the pages we want to create scroll events for.
 
-## Events 
+## Events
 
 **Create event listeners on one of the three events:**
 
 - ```scrollupWhileReading``` This is triggered when a user is scrolling up, after having scrolled down. The desired behavior is to detect a user who scrolls up, after reading. The amount needed to be scrolled down can be modified.
 - ```scrolldownNormalReading``` This is triggered when a user is scrolling down. This is meant to be used to interupt the ```scrollupWhileReading``` event, by reengaging the reading experience.
-- ```scrolldownWhileReading``` This is triggered when the user is scrolling down. This is meant to be a general event that is triggered while a user is reading. 
+- ```scrolldownWhileReading``` This is triggered when the user is scrolling down. This is meant to be a general event that is triggered while a user is reading.
 
 ## Callbacks
 
