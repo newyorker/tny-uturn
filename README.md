@@ -1,3 +1,5 @@
+![](https://evaloy.files.wordpress.com/2011/06/u-turncrop.jpg)
+
 # uturn - detect scrolling behavior with a requestAnimationFrame debounce
 
 uturn.js is a small library for detecting people who change scroll direction while viewing a webpage. It uses the requestAnimationFrame events to run at 60 frames a second.
