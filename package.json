@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/NewYorker/tny-speeding-ticket.git"
+    "url": "git://github.com/NewYorker/tny-uturn.git"
   },
   "author": "Leonard Bogdonoff <rememberlenny@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NewYorker/tny-speeding-ticket/issues"
+    "url": "https://github.com/NewYorker/tny-uturn/issues"
   },
-  "homepage": "https://github.com/NewYorker/tny-speeding-ticket"
+  "homepage": "https://github.com/NewYorkertny-uturn"
 }
