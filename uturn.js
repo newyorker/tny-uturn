@@ -7,8 +7,8 @@ function uturn () {
         _lastScrollY            = 0,
         _container              = document.querySelector('body'), // Change this to the element you want to watch
         _ticking                = false,
-        scrollupWhileReading    = new CustomEvent("directionChangeToScrollup", {}),
-        scrolldownNormalReading = new CustomEvent("directionChangeToScrolldown", {}),
+        scrollChangeToUp        = new CustomEvent("scrollChangeToUp", {}),
+        scrollChangeToDown      = new CustomEvent("scrollChangeToDown", {});
 
     events();
 
@@ -72,9 +72,9 @@ function uturn () {
           isGoingUp;
       if(bounds.top < 0 && (bounds.top+bounds.height-window.innerHeight) > 0){
         if(_scrollY > y){
-            document.dispatchEvent(directionChangeToScrollup);
+            document.dispatchEvent(scrollChangeToUp);
         } else {
-            document.dispatchEvent(directionChangeToScrolldown);
+            document.dispatchEvent(scrollChangeToDown);
         }
       }
     }
