@@ -3,7 +3,6 @@ function uturn () {
     var _scrollY,
         _countingUp             = 0,
         _countingDown           = 0,
-        _onionSkin              = [],
         _lastScrollY            = 0,
         _container              = document.querySelector('body'), // Change this to the element you want to watch
         _ticking                = false,
