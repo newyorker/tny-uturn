@@ -3,13 +3,12 @@ function uturn () {
     var _scrollY,
         _countingUp             = 0,
         _countingDown           = 0,
-        _verifySpeed            = 0,
         _onionSkin              = [],
         _lastScrollY            = 0,
+        _container              = document.querySelector('body'), // Change this to the element you want to watch
         _ticking                = false,
-        scrollupWhileReading    = new CustomEvent("scrollupWhileReading", {}),
-        scrolldownNormalReading = new CustomEvent("scrolldownNormalReading", {}),
-        scrolldownWhileReading  = new CustomEvent("scrolldownWhileReading", {});
+        scrollupWhileReading    = new CustomEvent("directionChangeToScrollup", {}),
+        scrolldownNormalReading = new CustomEvent("directionChangeToScrolldown", {}),
 
     events();
 
@@ -65,57 +64,18 @@ function uturn () {
     }
 
     /**
-     * Keeping track of scroll history in an array
-     * Using this, you can estimate the actual direction/speed of scrolls
-     */
-    function addToScrollHistory(y){
-      _onionSkin.push(y);
-      if(_onionSkin.length > 9){
-        _onionSkin = _onionSkin.slice(1, 10);
-        // console.log(_onionSkin);
-      }
-    }
-
-    /**
-     * Check if scrolling down
-     */
-    function checkIsReadingNormally(y){
-      if(_scrollY > y){
-        document.dispatchEvent(scrolldownNormalReading);
-      }
-    }
-
-    /**
      * Do a check if scrolling up
      * Expand check by confirmed the scrolling up is actually happening
      */
-    function checkIsScrollingUp(){
-      var article = document.querySelector('#articleBody');
-      var bounds = document.querySelector('#articleBody').getBoundingClientRect();
+    function checkIsScrollingUp(y){
+      var bounds = _container.getBoundingClientRect(),
+          isGoingUp;
       if(bounds.top < 0 && (bounds.top+bounds.height-window.innerHeight) > 0){
-        var isGoingUp = false;
-        for(var i = 1; i < _onionSkin.length; i++){
-          if(_onionSkin[i-1] >= _onionSkin[i]){
-            isGoingUp = true;
-          }
-        }
-        if(isGoingUp){
-          _verifySpeed = 0;
-          _countingDown = 0;
-          _countingUp = _countingUp + 1;
-          if(_countingUp > 3){
-            document.dispatchEvent(scrollupWhileReading);
-          }
+        if(_scrollY > y){
+            document.dispatchEvent(directionChangeToScrollup);
         } else {
-          _countingDown = _countingDown + 1;
-          _countingUp = 0;
-          if(_countingDown > 3){
-            document.dispatchEvent(scrolldownWhileReading);
-          }
+            document.dispatchEvent(directionChangeToScrolldown);
         }
-        // console.log('Going down');
-      } else {
-        document.dispatchEvent(scrolldownWhileReading);
       }
     }
 
@@ -125,9 +85,11 @@ function uturn () {
     var updateLocation = function(){
       // console.log('fn running');
       var y = window.scrollY;
-      addToScrollHistory(y);
-      checkIsScrollingUp();
-      checkIsReadingNormally(y);
+      checkIsScrollingUp(y);
       _scrollY = y;
     };
   }
+
+  TNY.uturn = uturn;
+
+})(TNY, document);
